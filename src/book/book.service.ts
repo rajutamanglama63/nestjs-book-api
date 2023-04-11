@@ -1,10 +1,15 @@
+import { Injectable } from "@nestjs/common";
 import { Book } from "./data/book.dto";
+import { v4 as uuidv4} from "uuid"
 
+
+@Injectable()
 export class BookService {
     public books: Book[] = []
 
     // add books
     addBookService(book: Book): string {
+        book.id = uuidv4()
         this.books.push(book)
         return "Book has been successfully added."
     } 
