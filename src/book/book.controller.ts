@@ -19,7 +19,7 @@ export class BookController {
     }
 
     // deleteBook
-    @Delete("/book/:id")
+    @Delete("/delete/:id")
     deleteBook(@Param("id") bookId: string): string {
         return this.bookService.deleteBookService(bookId)
     }
